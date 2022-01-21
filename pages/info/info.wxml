@@ -1,3 +1,4 @@
 <!-- 后退导航 -->
 <!-- <navigator open-type="navigateBack" delta="1">后退</navigator> -->
 <navigator open-type="navigateBack">后退</navigator>
+<button bindtap="goBack">后退</button>

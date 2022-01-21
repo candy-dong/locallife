@@ -14,7 +14,12 @@ Page({
     onLoad: function (options) {
 
     },
-
+    // 编程式导航 后退
+    goBack(){
+        wx.navigateBack({
+        //   delta: 1,
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

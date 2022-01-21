@@ -14,7 +14,19 @@ Page({
     onLoad: function (options) {
 
     },
-
+    // 编程式导航
+    // tab页面
+    gotoMessage(){
+        wx.switchTab({
+          url: '/pages/message/message',
+        })
+    },
+    // 非tab页面
+    gotoInfo(){
+        wx.navigateTo({
+          url: '/pages/info/info',
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

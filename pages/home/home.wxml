@@ -5,3 +5,6 @@
 <!-- 非tabbar页面 -->
 <!-- <navigator url="/pages/info/info" open-type="navigate">导航到info页面</navigator> -->
 <navigator url="/pages/info/info">导航到info页面</navigator>
+<!-- 编程式导航 -->
+<button bindtap="gotoMessage">跳转到消息页面</button>
+<button bindtap="gotoInfo">跳转到info页面</button>
