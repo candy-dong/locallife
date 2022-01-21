@@ -5,16 +5,41 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        swipperList:[],
+        gridList:[]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getSwipperList()
+        this.getGridList()
     },
-
+    getSwipperList(){
+        wx.request({
+          url: 'https://www.escook.cn/slides',
+          method: 'GET',
+          success: (res)=>{
+              console.log(res)
+              this.setData({
+                  swiperList: res.data
+              })
+          }
+        })
+    },
+    // 获取九宫格数据方法
+    getGridList(){
+        wx.request({
+          url: 'https://www.escook.cn/categories',
+          method:'GET',
+          success: (res)=>{
+              this.setData({
+                  gridList: res.data
+              })
+          }
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
