@@ -1,2 +1,19 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- 轮播图 -->
+<swiper indicator-dots circular>
+    <swiper-item wx:for="{{swiperList}}" wx:key="id">
+        <image src="{{item.image}}"></image>
+    </swiper-item>
+</swiper>
+<!-- 九宫格 -->
+<view class="grid-list">
+    <view class="grid-item" wx:for="{{gridList}}" wx:key="id">
+        <image src="{{item.icon}}"></image>
+        <text>{{item.name}}</text>
+    </view>
+</view>
+<!-- 图片区域 -->
+<view class="img-box">
+    <image src="/images/er/1.png" mode="aspectFit"></image>
+    <image src="/images/er/2.jpg" mode="aspectFit"></image>
+</view>
