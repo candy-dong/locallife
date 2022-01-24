@@ -27,6 +27,11 @@ Page({
           url: '/pages/info/info',
         })
     },
+    gotoInfo2(){
+      wx.navigateTo({
+        url: '/pages/info/info?name=ls&gender=男',
+      })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

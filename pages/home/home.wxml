@@ -8,3 +8,6 @@
 <!-- 编程式导航 -->
 <button bindtap="gotoMessage">跳转到消息页面</button>
 <button bindtap="gotoInfo">跳转到info页面</button>
+<!-- 导航传参 -->
+<navigator url="/pages/info/info?name=zs&age=20">跳转到info页面</navigator>
+<button bindtap="gotoInfo2">跳转到info页面</button>
