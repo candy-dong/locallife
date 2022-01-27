@@ -1,13 +1,19 @@
 <!--pages/home/home.wxml-->
-<!-- 声明式导航 -->
-<!-- tabbar页面 -->
-<navigator url="/pages/message/message" open-type="switchTab">导航到消息页面</navigator>
-<!-- 非tabbar页面 -->
-<!-- <navigator url="/pages/info/info" open-type="navigate">导航到info页面</navigator> -->
-<navigator url="/pages/info/info">导航到info页面</navigator>
-<!-- 编程式导航 -->
-<button bindtap="gotoMessage">跳转到消息页面</button>
-<button bindtap="gotoInfo">跳转到info页面</button>
-<!-- 导航传参 -->
-<navigator url="/pages/info/info?name=zs&age=20">跳转到info页面</navigator>
-<button bindtap="gotoInfo2">跳转到info页面</button>
+<!-- 轮播图 -->
+<swiper indicator-dots circular>
+    <swiper-item wx:for="{{swiperList}}" wx:key="id">
+        <image src="{{item.image}}"></image>
+    </swiper-item>
+</swiper>
+<!-- 九宫格 -->
+<view class="grid-list">
+    <view class="grid-item" wx:for="{{gridList}}" wx:key="id">
+        <image src="{{item.icon}}"></image>
+        <text>{{item.name}}</text>
+    </view>
+</view>
+<!-- 图片区域 -->
+<view class="img-box">
+    <image src="/images/er/1.png" mode="aspectFit"></image>
+    <image src="/images/er/2.jpg" mode="aspectFit"></image>
+</view>

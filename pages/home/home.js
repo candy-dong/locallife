@@ -5,32 +5,39 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        swipperList:[],
+        gridList:[]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getSwipperList()
+        this.getGridList()
     },
-    // 编程式导航
-    // tab页面
-    gotoMessage(){
-        wx.switchTab({
-          url: '/pages/message/message',
+    getSwipperList(){
+        wx.request({
+          url: 'https://www.escook.cn/slides',
+          method: 'GET',
+          success: (res)=>{
+              this.setData({
+                  swiperList: res.data
+              })
+          }
         })
     },
-    // 非tab页面
-    gotoInfo(){
-        wx.navigateTo({
-          url: '/pages/info/info',
+    // 获取九宫格数据方法
+    getGridList(){
+        wx.request({
+          url: 'https://www.escook.cn/categories',
+          method:'GET',
+          success: (res)=>{
+              this.setData({
+                  gridList: res.data
+              })
+          }
         })
-    },
-    gotoInfo2(){
-      wx.navigateTo({
-        url: '/pages/info/info?name=ls&gender=男',
-      })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -64,10 +71,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-      console.log('触发了刷新')
-      // wx.stopPullDownRefresh({
-      //   success: (res) => {},
-      // })
+
     },
 
     /**
