@@ -5,17 +5,26 @@ Page({
      * 页面的初始数据
      */
     data: {
-        colorList: []
+        colorList: [],
+        isLoading: false
     },
     
     getColors() {
-            wx.request({
+        this.setData({isLoading:true})
+        wx.showLoading({
+          title: '数据加载中',
+        })
+        wx.request({
           url: 'https://www.escook.cn/api/color',
           method:"GET",
           success: ({data:res})=>{
               this.setData({
                   colorList:[...this.data.colorList,...res.data]
               })
+          },
+          complete: ()=>{
+            wx.hideLoading()
+            this.setData({isLoading:false})
           }
         })
     },
@@ -66,6 +75,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
+        if(this.data.isLoading == true) return
         this.getColors()
     },
 
