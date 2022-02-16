@@ -9,13 +9,15 @@ Page({
         shopList:[],
         page:1,
         pageSize:10,
-        total: 0
+        total: 0,
+        isLoading: false
     },
-
+   
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+       
         this.setData({
             query: options
         })
@@ -24,6 +26,12 @@ Page({
 
     getShopList(){
         console.log(this.data.query.id)
+        this.setData({
+            isLoading: true
+        })
+        wx.showLoading({
+            title: '数据加载中...',
+          }),
         wx.request({
         //   url: 'https://www.escook.cn/categories/${this.data.query.id}/shops',
           url: 'https://www.escook.cn/categories/1/shops',
@@ -38,6 +46,12 @@ Page({
                   shopList: [...this.data.shopList,...res.data],
                   totle: res.header['X-Total-Count']-0
               })
+          },
+          complete: () => {
+              wx.hideLoading()
+              this.setData({
+                isLoading: false
+            })
           }
 
 
@@ -85,7 +99,11 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+        if(this.data.isLoading) return
+        this.setData({
+            page: this.data.page + 1
+        })
+        this.getShopList()
     },
 
     /**
