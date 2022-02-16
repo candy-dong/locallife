@@ -99,6 +99,12 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
+        if(this.data.page * this.data.pageSize >= this.data.total){
+            return wx.showToast({
+              title: '数据加载完毕',
+              icon: 'none'
+            })
+        }
         if(this.data.isLoading) return
         this.setData({
             page: this.data.page + 1
