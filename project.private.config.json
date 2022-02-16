@@ -23,6 +23,12 @@
                     "pathName": "pages/message/message",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "商铺",
+                    "pathName": "pages/shoplist/shoplist",
+                    "query": "id=1&title=美食",
+                    "scene": null
                 }
             ]
         }
