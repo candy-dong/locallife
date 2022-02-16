@@ -5,9 +5,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        count: 0,
+        username: 'zs',
+        country: 'CHINA'
     },
-
+    addCount(){
+        this.setData({
+            count: this.data.count+1
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

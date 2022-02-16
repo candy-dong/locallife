@@ -1,0 +1,30 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "联系我们",
+                    "pathName": "pages/contact/contact",
+                    "query": "name=zs&age=20",
+                    "scene": null
+                },
+                {
+                    "name": "消息页",
+                    "pathName": "pages/message/message",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}
