@@ -5,7 +5,11 @@ Page({
      * 页面的初始数据
      */
     data: {
-        query:{}
+        query:{},
+        shopList:[],
+        page:1,
+        pageSize:10,
+        total: 0
     },
 
     /**
@@ -14,6 +18,29 @@ Page({
     onLoad: function (options) {
         this.setData({
             query: options
+        })
+        this.getShopList()
+    },
+
+    getShopList(){
+        console.log(this.data.query.id)
+        wx.request({
+        //   url: 'https://www.escook.cn/categories/${this.data.query.id}/shops',
+          url: 'https://www.escook.cn/categories/1/shops',
+          method: 'GET',
+          data: {
+              _page: this.data.page,
+              _limit:this.data.pageSize
+          },
+          success: (res)=>{
+              console.log(res)
+              this.setData({
+                  shopList: [...this.data.shopList,...res.data],
+                  totle: res.header['X-Total-Count']-0
+              })
+          }
+
+
         })
     },
 
