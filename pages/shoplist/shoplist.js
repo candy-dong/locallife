@@ -24,8 +24,7 @@ Page({
         this.getShopList()
     },
 
-    getShopList(){
-        console.log(this.data.query.id)
+    getShopList(cb){
         this.setData({
             isLoading: true
         })
@@ -33,8 +32,8 @@ Page({
             title: '数据加载中...',
           }),
         wx.request({
-        //   url: 'https://www.escook.cn/categories/${this.data.query.id}/shops',
-          url: 'https://www.escook.cn/categories/1/shops',
+        //   url: url1,
+          url: `https://www.escook.cn/categories/${this.data.query.id}/shops`,
           method: 'GET',
           data: {
               _page: this.data.page,
@@ -49,9 +48,9 @@ Page({
           },
           complete: () => {
               wx.hideLoading()
-              this.setData({
-                isLoading: false
-            })
+              this.setData({ isLoading: false })
+            //   wx.stopPullDownRefresh()onPullDownRefresh中按需调用
+              cb && cb()
           }
 
 
@@ -92,14 +91,21 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        this.setData({
+            page:1,
+            shopList:[],
+            totle:0
+        })
+        this.getShopList(()=>{
+            wx.stopPullDownRefresh()
+        })
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        if(this.data.page * this.data.pageSize >= this.data.total){
+        if(this.data.page * this.data.pageSize >= this.data.totle){
             return wx.showToast({
               title: '数据加载完毕',
               icon: 'none'
