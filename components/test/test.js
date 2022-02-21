@@ -3,7 +3,8 @@ Component({
     options:{
         // styleIsolation: 'isolated'// 组件内外结构样式互不影响
         // styleIsolation: 'apply-shared'//外界影响组件，组件不影响外界
-        styleIsolation: 'shared'//内外影响 
+        styleIsolation: 'shared',//内外影响 
+        pureDataPattern: /^_/
     },
     /**
      * 组件的属性列表
@@ -27,7 +28,12 @@ Component({
     data: {
         n1:0,
         n2:0,
-        sum:0
+        sum:0,
+        _rgb:{
+            r:0,
+            g:0,
+            b:0
+        }
     },
     observers:{
         'n1,n2':function(newN1,newN2){
