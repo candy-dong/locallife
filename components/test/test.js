@@ -56,5 +56,25 @@ Component({
                 n2:this.data.n2 + 1
             })
         },
+    },
+    lifetimes:{
+        created(){
+            console.log('created')
+        },
+        attached(){
+            console.log('attached')
+        }
+    },
+    pageLifetimes:{
+        show(){
+            console.log('show')
+        },
+        hide(){
+            console.log('hide')
+        },
+        resize(){
+            console.log('resize')
+        }
+
     }
 })
