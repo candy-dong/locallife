@@ -8,8 +8,17 @@ Component({
     /**
      * 组件的属性列表
      */
-    properties: {
+    // vue中properties是可读不可写，小程序中可读可写
+    // vue中data私有属性可读可写，小程序中可读可写
+    // data倾向存储组件私有数据，properties更倾向于存储外界传递到组件中的数据
 
+    properties: {
+        // 第一种简化方式 max:10
+        // 第二种方式：完整的定义方式
+        max: {
+            type:Number,
+            value:10
+        }
     },
 
     /**
