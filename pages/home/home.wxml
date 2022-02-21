@@ -1,8 +1,9 @@
 <!--pages/home/home.wxml-->
 <!-- <text class="g-red-text">pages/home/home.wxml</text> -->
 <!-- <my-test1 max="9"></my-test1> -->
-<my-test2>
+<my-test2 count="{{count}}">
     <view>这是插入到组件中的slot内容</view>
     <view slot="before">这是before组件中的slot内容</view>
     <view slot="after">这是after组件中的slot内容</view>
 </my-test2>
+<view>父组件count:{{count}}</view>

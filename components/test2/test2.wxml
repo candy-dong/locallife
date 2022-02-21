@@ -3,4 +3,5 @@
     <slot name="before"></slot>
     <slot name="after"></slot>
     <slot></slot>
+    <view>子组件count值:{{count}}</view>
 </view>
