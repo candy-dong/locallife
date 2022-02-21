@@ -1,2 +1,5 @@
 <!--components/test/test.wxml-->
 <text class="g-red-text">components/test/test.wxml</text>
+<view>{{n1}} + {{n2}} = {{sum}}</view>
+<button bindtap = "addN1">n1+1</button>
+<button bindtap = "addN2">n2+1</button>
