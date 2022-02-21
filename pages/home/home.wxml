@@ -1,4 +1,6 @@
 <!--pages/home/home.wxml-->
-<text class="g-red-text">pages/home/home.wxml</text>
-<view></view>
-<my-test1 max="9"></my-test1>
+<!-- <text class="g-red-text">pages/home/home.wxml</text> -->
+<!-- <my-test1 max="9"></my-test1> -->
+<my-test2>
+    <view>这是插入到组件中的slot内容</view>
+</my-test2>
