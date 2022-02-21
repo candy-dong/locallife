@@ -21,6 +21,12 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        addCount(){
+            this.setData({
+                count:this.properties.count + 1
+            })
+            // 触发自定义事件,传递给父组件
+            this.triggerEvent('sync',this.properties.count)
+        }
     }
 })

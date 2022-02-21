@@ -1,7 +1,8 @@
 <view>
-    <view>这里是组件的内部结构</view>
+    <!-- <view>这里是组件的内部结构</view>
     <slot name="before"></slot>
     <slot name="after"></slot>
-    <slot></slot>
+    <slot></slot> -->
     <view>子组件count值:{{count}}</view>
+    <button bindtap="addCount">+1</button>
 </view>

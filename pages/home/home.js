@@ -7,7 +7,13 @@ Page({
     data: {
         count: 1
     },
-
+    syncCount(e){
+        console.log(e.detail)
+        console.log('syncCount')
+        this.setData({
+            count: e.detail
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
