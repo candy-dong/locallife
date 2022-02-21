@@ -3,4 +3,6 @@
 <!-- <my-test1 max="9"></my-test1> -->
 <my-test2>
     <view>这是插入到组件中的slot内容</view>
+    <view slot="before">这是before组件中的slot内容</view>
+    <view slot="after">这是after组件中的slot内容</view>
 </my-test2>

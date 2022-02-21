@@ -1,5 +1,8 @@
 // components/test4/test2.js
 Component({
+    options: {
+        multipleSlots:true//启用多个slot插槽
+    },
     /**
      * 组件的属性列表
      */
