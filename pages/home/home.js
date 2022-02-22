@@ -14,6 +14,15 @@ Page({
             count: e.detail
         })
     },
+    getChild(){
+        // const child = this.selectComponent('.customA')
+        const child = this.selectComponent('#cA')
+        console.log(child)
+        child.addCount()
+        // child.setData({
+        //     count: child.properties.count + 1
+        // })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
